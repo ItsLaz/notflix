@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/notflix/static/css/main.8bc43972.chunk.css",
-    "main.js": "/notflix/static/js/main.56cd5fdc.chunk.js",
-    "main.js.map": "/notflix/static/js/main.56cd5fdc.chunk.js.map",
+    "main.css": "/notflix/static/css/main.3f47edbc.chunk.css",
+    "main.js": "/notflix/static/js/main.02deed7b.chunk.js",
+    "main.js.map": "/notflix/static/js/main.02deed7b.chunk.js.map",
     "runtime-main.js": "/notflix/static/js/runtime-main.1bb15618.js",
     "runtime-main.js.map": "/notflix/static/js/runtime-main.1bb15618.js.map",
     "static/js/2.44be2bee.chunk.js": "/notflix/static/js/2.44be2bee.chunk.js",
     "static/js/2.44be2bee.chunk.js.map": "/notflix/static/js/2.44be2bee.chunk.js.map",
     "index.html": "/notflix/index.html",
-    "static/css/main.8bc43972.chunk.css.map": "/notflix/static/css/main.8bc43972.chunk.css.map",
+    "static/css/main.3f47edbc.chunk.css.map": "/notflix/static/css/main.3f47edbc.chunk.css.map",
     "static/js/2.44be2bee.chunk.js.LICENSE.txt": "/notflix/static/js/2.44be2bee.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1bb15618.js",
     "static/js/2.44be2bee.chunk.js",
-    "static/css/main.8bc43972.chunk.css",
-    "static/js/main.56cd5fdc.chunk.js"
+    "static/css/main.3f47edbc.chunk.css",
+    "static/js/main.02deed7b.chunk.js"
   ]
 }
