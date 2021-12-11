@@ -23,7 +23,7 @@ function Banner({ fetchUrl }) {
     return (
         <>
             {error && <p className="error">{error}</p>}
-            {isPending && <p className="loading">Loading...</p>}
+            {isPending && <p className="loading">Loading....</p>}
             {movie && (
                 <header
                     className="banner"
