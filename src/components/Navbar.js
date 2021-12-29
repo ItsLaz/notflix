@@ -4,8 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBell } from '@fortawesome/free-solid-svg-icons';
 import profileAvatar from '../assets/Netflix-avatar.png';
 import { useEffect, useState } from 'react';
+import { useLogout } from '../hooks/useLogout';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 export default function Navbar() {
+    const { logout } = useLogout();
+    const { user } = useAuthContext();
     const [show, handleShow] = useState(false);
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -14,7 +18,7 @@ export default function Navbar() {
             } else handleShow(false);
         });
         return () => {
-            window.removeEventListener('scroll');
+            window.removeEventListener('scroll', null);
         };
     }, []);
 
@@ -99,6 +103,16 @@ export default function Navbar() {
                                     alt="profile avatar"
                                 />
                             </Link>
+                        </li>
+                        <li className="navbar__link">
+                            {user && (
+                                <button
+                                    className="btn--signout"
+                                    onClick={logout}
+                                >
+                                    Sign out
+                                </button>
+                            )}
                         </li>
                     </ul>
                 </div>

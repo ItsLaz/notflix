@@ -1,47 +1,42 @@
 import './App.css';
-import Row from './components/Row';
-import Navbar from './components/Navbar';
-import Banner from './components/Banner';
-import requests from './requests';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { useAuthContext } from './hooks/useAuthContext';
+import Home from './pages/home/Home';
+import Login from './pages/login/Login';
+import Signup from './pages/signup/Signup';
 
 function App() {
+    const { authIsReady, user } = useAuthContext();
+
     return (
         <div className="app">
-            <BrowserRouter>
-                <Navbar />
-                <Banner fetchUrl={requests.fetchTrending} />
-                <Row
-                    title="NETFLIX ORIGINALS"
-                    fetchUrl={requests.fetchNetflixOriginals}
-                    isLargeRow
-                />
-                <Row title="Trending" fetchUrl={requests.fetchTrending} />
-                <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-                <Row
-                    title="Action Movies"
-                    fetchUrl={requests.fetchActionMovies}
-                />
-                <Row
-                    title="Comedy Movies"
-                    fetchUrl={requests.fetchComedyMovies}
-                />
-                <Row
-                    title="Horror Movies"
-                    fetchUrl={requests.fetchHorrorMovies}
-                />
-                <Row
-                    title="Romance Movies"
-                    fetchUrl={requests.fetchRomanceMovies}
-                />
-                <Row
-                    title="Documentaries"
-                    fetchUrl={requests.fetchDocumentaries}
-                />
-                <Routes>
-                    <Route path="/" element={<Navbar />} />
-                </Routes>
-            </BrowserRouter>
+            {authIsReady && (
+                <BrowserRouter>
+                    <Routes>
+                        {user && <Route path="/" element={<Home />} />}
+                        {!user && (
+                            <Route
+                                path="/"
+                                element={<Navigate replace to="/signup" />}
+                            />
+                        )}
+                        {!user && <Route path="/login" element={<Login />} />}
+                        {user && (
+                            <Route
+                                path="/login"
+                                element={<Navigate replace to="/" />}
+                            />
+                        )}
+                        {!user && <Route path="/signup" element={<Signup />} />}
+                        {user && (
+                            <Route
+                                path="/signup"
+                                element={<Navigate replace to="/" />}
+                            />
+                        )}
+                    </Routes>
+                </BrowserRouter>
+            )}
         </div>
     );
 }
