@@ -121,3 +121,28 @@ form:valid Link {
     cursor: pointer;
     font-weight: 700;
 }
+@media (max-width: 1250px) {
+    .navbar__link form {
+        background: transparent;
+        border: none;
+        display: none;
+    }
+}
+@media (max-width: 770px) {
+    .navbar__container {
+        padding: 0 4px;
+        justify-content: space-around;
+    }
+    .navbar__link {
+        margin-left: 12px;
+    }
+    .nav__mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar__container {
+        justify-content: space-around;
+    }
+}

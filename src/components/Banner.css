@@ -56,3 +56,17 @@
         #141414
     );
 }
+
+@media (max-width: 800px) {
+    .banner__title {
+        font-size: 40px;
+    }
+}
+@media (max-width: 500px) {
+    .banner__title {
+        font-size: 36px;
+    }
+    .banner__desc {
+        width: 250px;
+    }
+}

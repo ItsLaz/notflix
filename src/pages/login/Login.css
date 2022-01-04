@@ -1,5 +1,7 @@
 .container {
     background-image: url(../../assets/login-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
 }
 .logo__img--signup {
@@ -68,4 +70,18 @@
     border: 0;
     border-radius: 4px;
     cursor: pointer;
+}
+@media (max-width: 500px) {
+    .form__container {
+        max-width: 300px;
+    }
+    .signup-form {
+        max-width: 260px;
+    }
+    .input-group {
+        width: 250px;
+    }
+    .btn {
+        width: 240px;
+    }
 }

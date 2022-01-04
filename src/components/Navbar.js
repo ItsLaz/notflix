@@ -35,7 +35,7 @@ export default function Navbar() {
                             />
                         </Link>
                     </figure>
-                    <ul className="navbar__list">
+                    <ul className="navbar__list nav__mobile">
                         <li className="navbar__link">
                             <Link to="/" className="navbar__link--anchor">
                                 Home
@@ -87,7 +87,7 @@ export default function Navbar() {
                                 />
                             </form>
                         </li>
-                        <li className="navbar__link">
+                        <li className="navbar__link nav__mobile">
                             <Link to="/" className="navbar__link--anchor">
                                 <FontAwesomeIcon
                                     className="icon"
